@@ -1,0 +1,90 @@
+body {
+  background: linear-gradient(75deg, #2019ff, rgba(123, 208, 255, 1))
+}
+
+.main-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tag{
+
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.reg-from {
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-from input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(246, 246, 246, 0.729);
+}
+
+.reg-from input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.reg-from input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.nextbtn {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reg-from nextbtn:hover {
+  background-color: #006F8F;
+}
+
+.backbtn{
+
+  background-color: #ba003b;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 200px;
+}
+
+.backbtn:hover{
+
+  background-color: #ab0238;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 200px;
+}
