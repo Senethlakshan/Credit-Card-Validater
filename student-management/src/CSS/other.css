@@ -1,0 +1,54 @@
+/* Center content vertically and horizontally */
+.mcontent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Style table */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 1em auto;
+    border-radius: 5px;
+  }
+  
+  td, th {
+    border: 1px solid #f7f7f7;
+    padding: 0.5em;
+  }
+  
+  th {
+    font-weight: bold;
+    background-color: #00aeff;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  /* Style buttons */
+  .pbtn {
+    display: block;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pbtn:hover {
+    background-color: #333;
+  }
+  
+  .tag4{
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }

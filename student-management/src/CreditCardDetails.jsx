@@ -19,7 +19,7 @@ function CreditCardDetails({ nextPage, prevPage }) {
 
   const handleCreditCardNumberChange = (event) => {
     setCreditCardNumber(event.target.value);
-    setDisplayCreditCardNumber(event.target.value.replace(/.(?=.{4})/g, "*"));
+    setDisplayCreditCardNumber(event.target.value.replace(/.(?=.{3})/g, "*"));
   };
 
   const handleSubmit = (event) => {
