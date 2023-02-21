@@ -1,66 +1,56 @@
-import React from 'react';
-import './CSS/other.css'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
+const OtherDetails = () => {
+  const [data, setData] = useState([]);
 
-function OtherDetails({ nextPage, prevPage }) {
+  useEffect(() => {
+    axios.get("/api/data").then((response) => {
+      setData(response.data);
+    });
+  }, []);
 
-  const data = [
-    {
-      fullname: 'Seneth lakshan',
-      email: 'kmseneth@gmail.com',
-      username: 'kmseneth',
-      registration_number: '12345',
-      age: 23,
-      date_of_birth: '2000-02-04',
-      favorite_game: 'Footbol',
-      creditcard_num: '*************654',
-      cd_holder: 'km seneth',
-      expire_date: '12-03-2025'
-    }
-  ];
-
-  const columns = [
-    { Header: 'Fullname', accessor: 'fullname' },
-    { Header: 'Email', accessor: 'email' },
-    { Header: 'Username', accessor: 'username' },
-    { Header: 'Registration Number', accessor: 'registration_number' },
-    { Header: 'Age', accessor: 'age' },
-    { Header: 'Date of Birth', accessor: 'date_of_birth' },
-    { Header: 'Favorite Game', accessor: 'favorite_game' },
-    { Header: 'Credit Card Number', accessor: 'creditcard_num' },
-    { Header: 'CD Holder', accessor: 'cd_holder' },
-    { Header: 'Expire Date', accessor: 'expire_date' }
-  ];
+  const formatCreditCardNumber = (number) => {
+    const lastFourDigits = number.slice(-4);
+    return `***${lastFourDigits}`;
+  };
 
   return (
-    <div className='mcontent'>
-      <h1 className='tag4'>Student infomation</h1>
-      <p className='tag4'>Please Check your infomation Correct !</p>
-
-      <table>
+  <div>
+    <h1>Student Information</h1>
+  <h3>Please Check Your Information Correct!</h3>
+    <table>
       <thead>
         <tr>
-          {columns.map((column) => (
-            <th key={column.accessor}>{column.Header}</th>
-          ))}
+          <th>Full name</th>
+          <th>Registration number</th>
+          <th>Date of birth</th>
+          <th>Age</th>
+          <th>Favorite sport</th>
+          <th>Credit card number</th>
+          <th>Expiry date</th>
+          <th>CVV number</th>
+          <th>Name of the cardholder</th>
         </tr>
       </thead>
       <tbody>
-        {data.map((row, rowIndex) => (
-          <tr key={rowIndex}>
-            {columns.map((column) => (
-              <td key={column.accessor}>{row[column.accessor]}</td>
-            ))}
+        {data.map((item) => (
+          <tr key={item.id}>
+            <td>{item.fullName}</td>
+            <td>{item.registrationNumber}</td>
+            <td>{item.dateOfBirth}</td>
+            <td>{item.age}</td>
+            <td>{item.favoriteSport}</td>
+            <td>{formatCreditCardNumber(item.creditCardNumber)}</td>
+            <td>{item.expiryDate}</td>
+            <td>{item.cvvNumber}</td>
+            <td>{item.cardholderName}</td>
           </tr>
         ))}
       </tbody>
     </table>
-
-
-      <button className='pbtn' onClick={prevPage}>Previous</button>
-      <button  className='pbtn' onClick={nextPage}>Start here</button>
-    </div>
+  </div>
   );
-}
+};
 
 export default OtherDetails;
